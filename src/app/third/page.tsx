@@ -76,7 +76,7 @@ export default function Third() {
 				variants={sectionVariants}
 				initial="initial"
 				animate={isAnimating ? "exit" : "animate"}
-				className="sm:w-1/2 m-auto h-full flex flex-col justify-center absolute top-0 left-0 right-0 bg-slate-950"
+				className="sm:w-1/2 m-auto h-full flex flex-col justify-center absolute top-0 left-0 right-0"
 			>
 				<WordPullUp
 					className="text-4xl font-bold tracking-[-0.02em] text-black dark:text-white md:text-7xl md:leading-[5rem]"
