@@ -4,7 +4,8 @@ import React, { useState, useEffect, lazy, Suspense } from "react";
 import { motion, Variants } from "framer-motion";
 import WordPullUp from "@/components/magicui/word-pull-up";
 import { Button } from "@/components/ui/button";
-const LayoutGridDemo = lazy(() => import('./Section'));
+const LayoutGridDemo = lazy(() => import("./Section"));
+const AudioPlayerWithMute = lazy(() => import("./AudioPlayerWithMute"));
 
 const sectionVariants: Variants = {
 	initial: {
@@ -71,12 +72,15 @@ export default function Third() {
 
 	return (
 		<div className="relative h-[100dvh] overflow-hidden">
+			<div className="z-[5000]">
+				<AudioPlayerWithMute />
+			</div>
 			{/* First Section */}
 			<motion.section
 				variants={sectionVariants}
 				initial="initial"
 				animate={isAnimating ? "exit" : "animate"}
-				className="sm:w-1/2 m-auto h-full flex flex-col justify-center absolute top-0 left-0 right-0"
+				className="sm:w-1/2 m-auto h-full flex flex-col justify-center absolute top-0 left-0 right-0 z-30"
 			>
 				<WordPullUp
 					className="text-4xl font-bold tracking-[-0.02em] text-black dark:text-white md:text-7xl md:leading-[5rem]"
@@ -86,7 +90,7 @@ export default function Third() {
 					variants={buttonVariants}
 					initial="initial"
 					animate="animate"
-					className="text-center mt-6 relative z-20"
+					className="text-center mt-6 relative z-40"
 				>
 					<Button className="m-auto" onClick={handleButtonClick}>
 						Okay
